@@ -11,7 +11,7 @@
     <title>GifTastic</title>
 </head>
 
-<body class="container">
+<body background="assets/javascript/gif-backgroiund.jpg" class="container">
     <h1 class="text-center">GifTastic</h1>
 
     <!-- where topic searched is added to -->
@@ -20,27 +20,31 @@
     <br>
     <br>
 
-
-    <!-- input area to add the new sport buttons to the above div -->
-    <div class="">
-        <form id="sport-form">
-            <label for="input-area">TYPE IN A SPORT</label>
-            <br>
-            <br>
-            <input type="text" id="input-area">
-            <br>
-            <br>
-            <button id="new-sport" type="submit" value="input-area">ADD SPORT</button>
-        </form>
-    </div>
-    <br>
-    <br>
-
     <div class="row">
-        <!-- where gifs pulled from api will be displayed at -->
-        <div id="where-gifs-go">
+        <div class="col-3">
+            <!-- input area to add the new sport buttons to the above div -->
+            <div class="bg-white text-center">
+                <form id="sport-form">
+                    <label for="input-area">TYPE IN A SPORT</label>
+                    <br>
+                    <br>
+                    <input type="text" id="input-area">
+                    <br>
+                    <br>
+                    <button id="new-sport" type="submit" value="input-area">ADD SPORT</button>
+                </form>
+            </div>
+        </div>
+        <br>
+        <br>
+
+        <div class="col-9">
+            <!-- where gifs pulled from api will be displayed at -->
+            <div id="where-gifs-go">
+            </div>
         </div>
     </div>
+
     </div>
 
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>

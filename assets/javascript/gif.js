@@ -8,7 +8,7 @@ var sports = ["hockey", "snowboarding","golf"];
             sports.forEach(function (spt, index) {
                 console.log(index);
 
-                var btn = $("<button  class=rounded-pill>>");
+                var btn = $("<button  class=btn-lg>");
 
                 btn.addClass("newSport");
 
@@ -37,6 +37,9 @@ var sports = ["hockey", "snowboarding","golf"];
 
 
         $("#buttons").on("click", "button", function display() {
+
+            $("#where-gifs-go").empty();
+
             var sport = $(this).attr("data-sport");
             var queryURL = "https://api.giphy.com/v1/gifs/search?api_key=LJ2XOTPs4vG2CFF25DCvU86vJIQqPiiE&q=" + sport + "&limit=10";
 
@@ -53,11 +56,11 @@ var sports = ["hockey", "snowboarding","golf"];
                 results.forEach(function (result, index) {
                     console.log(index);
 
-                    var gifDiv = $("<div>");
+                    var gifDiv = $("<div class=float-left>");
 
                     var rating = result.rating;
 
-                    var p = $("<p>").text("Rating: " + rating);
+                    var p = $("<h3 class=bg-danger>").text("Rating: " + rating);
 
                     var giphy = $("<img>");
                     giphy.attr("src", result.images.fixed_height_still.url);
@@ -65,8 +68,9 @@ var sports = ["hockey", "snowboarding","golf"];
                     giphy.attr("data-animate", result.images.fixed_height.url);
                     giphy.attr("data-state", "still");
                     giphy.addClass("start");
+                    
 
-                    gifDiv.prepend(p, giphy);
+                    gifDiv.prepend(giphy, p);
 
                     $("#where-gifs-go").prepend(gifDiv);
 
