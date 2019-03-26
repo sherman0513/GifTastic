@@ -1,4 +1,6 @@
 var sports = ["hockey", "snowboarding","golf"];
+// note that golf does not work when it runs the ajax function.
+// it will only work when the "&limit10 is taken off or if golf is spelled with any capital letter in the word. Ex: Golf(this works)"
 
 
         function createButtons() {
