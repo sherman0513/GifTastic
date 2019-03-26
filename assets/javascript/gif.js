@@ -1,6 +1,5 @@
 var sports = ["hockey", "snowboarding","golf"];
-// note that golf does not work when it runs the ajax function.
-// it will only work when the "&limit10 is taken off or if golf is spelled with any capital letter in the word. Ex: Golf(this works)"
+
 
 
         function createButtons() {
@@ -43,7 +42,7 @@ var sports = ["hockey", "snowboarding","golf"];
             $("#where-gifs-go").empty();
 
             var sport = $(this).attr("data-sport");
-            var queryURL = "https://api.giphy.com/v1/gifs/search?api_key=LJ2XOTPs4vG2CFF25DCvU86vJIQqPiiE&q=" + sport + "&limit=10";
+            var queryURL = "https://api.giphy.com/v1/gifs/search?api_key=LJ2XOTPs4vG2CFF25DCvU86vJIQqPiiE&limit=10&q="+sport;
 
             console.log(queryURL);
 
